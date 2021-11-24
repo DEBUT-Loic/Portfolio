@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title> Infographie </title>
+<meta charset="utf-8">
+<link rel="shortcut icon" type="image/png" href="../img/icon.png">
+<link rel="stylesheet" href="../style/bootstrap.min.css">
+<link rel="stylesheet" href="../style/info_s.css">
+<link rel="stylesheet" href="../style/font_canal.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+</head>
+<body>
+
+<header>
+	<p> debut </p>
+	<p> loic </p>
+</header>
+
+<section>
+	<button type="button" class="btn btn-danger"> Sons Refusés </button>
+	<h1> infographie </h1>
+
+	<article class="row align-items-center">
+
+		<div class="col-sm-4">
+			<img class="portrait" src="../img/info/S1/breath_deeply.jpg" alt="Respirer profondément"/>
+		</div>
+
+		<div class="col-sm-4">
+			<img class="paysage" src="../img/info/S1/montagne.jpg" alt="Montagne"/>
+		</div>
+		
+		<div class="col-sm-4">
+			<img class="portrait" src="../img/info/S1/new_tech.jpg" alt="Nouvelles Technologies"/>
+		</div>
+
+	</article>
+
+	<article class="row align-items-center mt-3">
+
+		<div class="col-sm-4">
+			<img class="portrait" src="../img/info/S2/Poz_soup.png" alt="Poz'soup"/>
+		</div>
+		<div class="col-sm-4">
+			<img class="portrait" src="../img/info/S2/MMI_Foundry.png" alt="MMI Foundry"/>
+		</div>
+		<div class="col-sm-4 flex-column align-items-center">
+			<img class="portrait" src="../img/info/S2/Logo_Nord_Catch.png" alt="Nord Catch"/>
+			<p class="mt-3"> CLIQUEZ SUR L'IMAGE </p>
+		</div>
+
+	</article>
+
+		<article class="preview-box">
+		<span class="fas fa-times"></span>
+
+		<aside>
+		</aside>
+	</article>
+
+	<article class="row align-items-center mt-3">
+
+		<div class="col-sm-4">
+			<img class="portrait" src="../img/info/S3/Env_graph.png" alt="Environnemnt graphique"/>
+		</div>
+		<div class="col-sm-4">
+			<img class="portrait" src="../img/info/S3/Masque.jpg" alt="Masque"/>
+		</div>
+		<div class="col-sm-4">
+			<img class="portrait" src="../img/info/S3/Nord Sud.png" alt="Nord Sud"/>
+		</div>
+
+	</article>
+
+</section>
+
+<footer>
+	<a href="audio.html" class="col-lg-6 audio">
+		<article>
+			<h1> Audiovisuel </h1>
+		</article>
+	</a>
+
+	<a href="tut.html" class="col-lg-6 tut">
+		<article>
+			<h1> Projets tutorés </h1>
+		</article>
+	</a>
+</footer>
+
+<script src="../script/jquery.js"></script>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+<script>
+var effet, nom, prenom, sonBut, i
+
+effet=new Audio("../BTTF.wav");
+nom=$("header p").eq(0).html();
+prenom=$("header p").eq(1).html();
+sonBut=$("button").html()
+
+$("header").hover(function() {
+	console.log("BTTF")
+	 $("header p").fadeOut(750, function() {
+	 	$("header p").eq(1).css("display","none")
+	 	$("header p").eq(0).css("width","100%").fadeIn(750).html("retour vers le portfolio")
+	 })
+}, function() {
+	$("header p").fadeOut(750, function() {
+	 	$("header p").fadeIn(750)
+	 	$("header p").eq(1).css("display","on")
+	 	$("header p").eq(0).css("width","50%").html(nom)
+	 })
+})
+
+i=0
+$("button").click(function() {
+	if(i%2 === 0) {
+		$(this).removeClass("btn-danger").addClass("btn-success").html("Sons Acceptés")
+		$("header").hover(function() {
+			if ($('.btn').hasClass('btn-success')) {
+			effet.play()
+			effet.volume=0.45
+			console.log("son écouté")}
+		}, function() {
+			effet.pause()
+			effet.currentTime=0
+			console.log("son fermé")
+		})
+		i++;
+		console.log("success")
+	}
+	else if(i%2 !== 0){
+		$(this).removeClass("btn-success").addClass("btn-danger").html(sonBut);
+		i++;
+		console.log("danger")
+	}
+})
+
+$("header").click(function() {
+	window.open("../index.html")
+	// window.close()
+})
+
+$("img[alt='Nord Catch']").click(function() {
+	window.open("../img/info/S2/Nord_catch.pdf")
+})
+
+// $("section > article > div").click(function() {
+// 	$("section > article > div > p").remove();
+// 	let texte=$(this).children().attr("alt");
+// 	$(this).append("<p>"+texte+"</p>");
+// })
+
+$("section > article > div").click(function() {
+	console.log("add class")
+	$(".preview-box img").remove()
+	let srcImg=$(this).children().attr("src")
+	console.log(srcImg)
+	if (srcImg!="../img/info/S2/Logo_Nord_Catch.png") {
+		$(".preview-box aside").append("<img src='"+srcImg+"'/>");
+		$(".preview-box").addClass("show");
+	}
+})
+
+$(".preview-box span").click(function() {
+	$(".preview-box").removeClass("show");
+})
+</script>
+</body>
+</html>

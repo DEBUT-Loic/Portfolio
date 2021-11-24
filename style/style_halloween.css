@@ -1,0 +1,84 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+@font-face {
+	font-family: "canal";
+	src: url("../fonts/Futura Bold.otf") format('truetype');
+}
+
+@font-face {
+	font-family: "canal gros";
+	src: url("../fonts/Futura Extra Black.ttf") format('truetype');
+}
+
+header {
+	width: 100%;
+	position: fixed;
+	background-color: black;
+	height: 104px;
+}
+
+header nav {
+}
+
+header li {
+	float: left;
+	list-style-type: none;
+	display: inline-block;
+	width: 20%;
+	text-align: center;
+	line-height: 105px;
+}
+
+header li:not(li:nth-child(3n)) {
+}
+
+header a {
+	color: #FF5524;
+	transition: color 0.5s;
+	font-size: 30px;
+	text-decoration: none;
+	font-family: "canal gros";
+	text-transform: uppercase;
+}
+
+header a:hover {
+
+}
+
+header li:not(li:nth-child(3n)):hover {
+	transition: color 0.5s,background 0.5s;
+	color: black;
+	background: linear-gradient(#FEAC3F,#FE8E36 24.5%,#FF5524);
+}
+
+#logo {
+	height: 100px;
+	background-color: black;
+}
+
+#logo > p {
+	font-family: "canal";
+	line-height: 52.5px;
+	font-size: 55.5px;
+}
+
+#logo > p:first-child {
+	background: linear-gradient(#FEAC3F,#FE8E36 24.5%,#FF5524);
+	-webkit-background-clip: text;
+	color: transparent;
+}
+
+#logo > p:last-child {
+	background: linear-gradient(#FEAC3F,#FE8E36 24.5%,#FF5524);
+	color: black;
+}
+
+@media all and (max-width: 1299px) {
+	header a {
+		font-size: 25px;
+	}
+}

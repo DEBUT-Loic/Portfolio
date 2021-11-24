@@ -1,0 +1,29 @@
+@font-face {
+	font-family: "canal";
+	src: url("../fonts/Futura Bold.otf") format('truetype');
+}
+
+@font-face {
+	font-family: "canal gros";
+	src: url("../fonts/Futura Extra Black.ttf") format('truetype');
+}
+
+@font-face {
+	font-family: "canal light";
+	src: url("../fonts/futura Light bt.ttf") format('truetype');
+}
+
+@font-face {
+	font-family: "canal italic";
+	src: url("../fonts/Futura Medium Italic.ttf") format('truetype');
+}
+
+@font-face {
+	font-family: "canal GI";
+	src: url("../fonts/Futura Heavy Italic.ttf") format('truetype');
+}
+
+@font-face {
+	font-family: "canal heavy";
+	src: url("../fonts/Futura Heavy.ttf") format('truetype');
+}

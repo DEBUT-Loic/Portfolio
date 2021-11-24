@@ -1,0 +1,414 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+/*#FCDDB3=jaune clair*/
+/*#03224C=bleu marine*/
+
+header {
+	top: 0;
+	width: 100%;
+	position: fixed;
+	z-index: 100000000;
+}
+
+header li {
+	float: left;
+	list-style-type: none;
+	display: inline-block;
+	width: 20%;
+	text-align: center;
+	line-height: 105px;
+}
+
+header li:not(li:nth-child(3n)) {
+	background: #03224C;
+	transition: background 0.5s;
+}
+
+header a {
+	transition: color 0.5s;
+	font-size: 30px;
+	color: #FCDDB3;
+	text-decoration: none;
+	font-family: "canal gros";
+	text-transform: uppercase;
+}
+
+header a:hover {
+	transition: color 0.5s;
+	color: #03224C;
+}
+
+header li:not(li:nth-child(3n)):hover {
+	transition: background 0.5s;
+	background: #FCDDB3;
+}
+
+#logo {
+	height: 105px;
+	background-color: #013A6B;
+	background-image: linear-gradient(180deg, #03224C 50%, #FCDDB3 50%);
+}
+
+#logo > p {
+	font-family: "canal";
+	line-height: 52.5px;
+	font-size: 55.5px;
+}
+
+#logo > p:first-child {
+	color: #FCDDB3;
+}
+
+#logo > p:last-child {
+	color: #03224C;
+}
+
+				/* SECTION*/
+
+section {
+	height: calc(100vh - 105px);
+}
+
+		/*PROPOS*/
+
+#propos {
+	background-color: #0c1934;
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+    align-items: center;
+}
+
+#propos > div {
+	width: 40%;
+	display: flex;
+}
+
+#propos > img {
+	width: 300px;
+}
+
+#propos span {
+	display:none;
+}
+
+button {
+	cursor: pointer;
+	text-transform: uppercase;
+	font: 1.5em 'canal italic';
+	background-color: #0c1934;
+	border: none;
+	color: #FCDDB3;
+	padding: 10px;
+	transition: 0.5s background-color, 0.5s color, 0.5s font;
+}
+
+#propos > button:hover {
+	font: 2.5em 'canal GI';
+	background-color: #FCDDB3;
+	color: #0c1934;
+	transition: 0.5s background-color, 0.5s color, 0.5s font;
+}
+
+.ecrit {
+	font-family: "canal light";
+	color: #f6e2bf;
+	font-size: 3.5vh;
+}
+
+		/*COMPÉTENCES*/
+
+#comp {
+	width: 100%;
+	background-color: #f6e2bf;
+	color: #0c1934;
+	display: flex;
+	justify-content: space-around;
+	padding-top: 10px;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+#comp > article {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: #0c1934;
+	width: 280px;
+	height: 500px;
+}
+
+#comp > article > i {
+	font-size: 100px;
+	color: #FCDDB3;
+	margin: 10px 0 10px 0;
+}
+
+#comp > article > ul {
+	display: flex;
+	flex-direction: column;
+	height: calc(100% - 25vh);
+	justify-content: space-evenly;
+	align-items: center;
+	color: #f6e2bf;
+}
+
+#comp > article > ul > li{
+	font: 2.5em "canal light";
+	list-style: none;
+}
+
+		/*PROJET*/
+
+#projet {
+	width: 100%;
+	background-color: #0c1934;
+	color: #f6e2bf;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#projet > a {
+	width: 50%;
+	height: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	color: #f6e2bf;
+	transition: 0.4s color, 0.6s background;
+}
+
+.tut {
+	width: 100% !important;
+	height: 50% !important;
+}
+
+#projet h1 {
+	font: 4.7vw "canal gros";
+	text-transform: uppercase;
+}
+
+#projet > a:hover {
+	background: rgba(252,221,131,.9);
+	color: rgba(3,50,76,1);
+	transition: 0.4s color, 0.6s background;
+}
+
+		/*CONTACT*/
+
+#contact {
+	width: 100%;
+	background-color: #f6e2bf;
+	color: #0c1934;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#contact article {
+	display: inline-block;
+	text-align: center;
+}
+
+#contact article:first-child {
+	width: 27%;
+}
+
+#contact > article p {
+	font-family: 'canal light';
+	margin-top: 8px;
+	font-size: 25px;
+}
+
+#contact i {
+	font-size: 250px;
+	color: #03224C;
+	transition: all 0.5s;
+	padding-left: 15.625px;
+	padding-right: 15.625px;
+	margin-bottom: 5px;
+}
+
+#contact i:hover {
+	box-shadow: 1px 1px 5px 5px #03224C;
+	transition: all 0.5s;
+}
+
+#contact a {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#contact > article > button {
+	width: 100%;
+	color:  #03224C;
+	background: #FCDDB3;
+	border: solid 2px #03224C;
+	transition: 0.5s color;
+	transition: all .5s;
+}
+
+#contact > article > button:hover {
+	color: #FCDDB3;
+	background: #03224C;
+	font-size: 2em;
+	transition: all .5s;
+}
+
+#contact input[type="text"], #contact textarea[name="message"] {
+	font-family: 'canal light';
+	width: 100%;
+	background: transparent;
+	font-size: 1.5em;
+	margin-bottom: 20px;
+	padding: 0 0 0 7px;
+}
+
+#contact input[type="text"] {
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+#contact textarea[name="message"] {
+	height: 175px;
+	width: 100%;
+	font-size: 1em;
+}
+
+#contact input[type="submit"] {
+	color:  #03224C;
+	background: #FCDDB3;
+	border: solid 2px #03224C;
+	transition: 0.5s color;
+	transition: all .5s;
+	font-family: "canal italic";
+	padding: 5px;
+	font-size: 1.35em;
+}
+
+#contact input[type="submit"]:hover {
+	color: #FCDDB3;
+	background: #03224C;
+	transition: all .5s;
+	cursor: pointer;
+}
+
+	/*FOOTER*/
+
+footer {
+	font-family: 'canal light';
+	color: #03224C;
+	background-color: #f6e2bf;
+	text-align: center;
+	padding-bottom: 8px;
+}
+
+@media all and (orientation: portrait) {
+	.ecrit{
+		font-size: 3.5vw;
+	}
+}
+
+@media all and (max-width: 1299px) {
+	header a {
+		font-size: 25px;
+	}
+}
+
+@media screen and (max-width:1149px) {
+	#comp {
+		height: auto;
+	}
+
+	#comp > article {
+		width: 100%;
+		flex-direction: row;
+		justify-content: space-evenly;
+		background: none;
+		height: 300px;
+	}
+
+	#comp > article > i, #comp > article > ul > li {
+		color: #03224C;
+	}
+
+	#comp > article > i{
+		font-size: 125px;
+	}
+}
+
+@media all and (max-width: 1009px) {
+	header a {
+		font-size: 20px;
+	}
+
+	#logo p {
+		font-size: 50px;
+	}
+}
+
+@media all and (max-width: 943px) {
+	header a {
+		font-size: 20px;
+	}
+
+	#logo p {
+		font-size: 40px;
+	}
+
+	#propos {
+		height: auto !important;
+	}
+
+	#propos > div {
+		margin: 15px 0 15px 0;
+	}
+
+}
+
+@media all and (max-width: 850px) {
+	header a {
+		display: none;
+	}
+
+	header > nav > ul > li:nth-child(3n) {
+		width: 100%;
+	}
+
+	#logo p {
+		font-size: 40px;
+	}
+
+	#projet > a {
+		width: 100%;
+		height: auto;
+	}
+
+	.tut {
+		height: auto !important;
+	}
+
+	#contact {
+		flex-direction: column;
+		height: auto;
+	}
+
+	#contact > article {
+		margin-top: 20px;
+	}
+
+	#contact > article:first-child {
+		width: 50%;
+	}
+
+	footer {
+		padding-top: 20px;
+	}
+}

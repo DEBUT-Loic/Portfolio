@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title> Audiovisuel </title>
+<meta charset="utf-8">
+<link rel="shortcut icon" type="image/png" href="../img/icon.png">
+<link rel="stylesheet" href="../style/bootstrap.min.css">
+<link rel="stylesheet" href="../style/audio_s.css">
+<link rel="stylesheet" href="../style/font_canal.css">
+</head>
+<body>
+
+<header>
+	<p> debut </p>
+	<p> loic </p>
+</header>
+
+<section>
+	<button type="button" class="btn btn-danger"> Sons Refusés </button>
+	<h1> audiovisuel </h1>
+
+	<article class="row align-items-center">
+		<h2 class="col-12 mt-4 mb-4"> Bande d'annonce MMI 1ère année </h2>
+
+		<aside class="col-sm-12">
+			<video controls width="650" poster="../img/audio/BA.png" preload="metadata">
+    			<source src="../video/BA.mp4"
+        	    type="video/mp4">
+    			Sorry, your browser doesn't support embedded videos.
+			</video>
+		</aside>
+	</article>
+
+	<article class="row align-items-center">
+		<h2 class="col-12 mt-4 mb-4"> Film Noir </h2>
+
+		<aside class="col-sm-12">
+			<video controls width="650" poster="../img/audio/film_noir.png" preload="metadata">
+    			<source src="../video/film_noir.mp4"
+        	    type="video/mp4">
+    			Sorry, your browser doesn't support embedded videos.
+			</video>
+		</aside>
+	</article>
+
+	<article class="row align-items-center">
+		<h2 class="col-12 mt-4 mb-4"> Présentation DEBUT Loïc </h2>
+
+		<aside class="col-sm-12">
+			<video controls width="650" poster="../img/audio/PPP.png" preload="metadata">
+    			<source src="../video/PPP.mp4"
+        	    type="video/mp4">
+    			Sorry, your browser doesn't support embedded videos.
+			</video>
+		</aside>
+	</article>
+
+</section>
+
+<footer>
+	<a href="info.html" class="col-lg-6 audio">
+		<article>
+			<h1> Infographie </h1>
+		</article>
+	</a>
+
+	<a href="tut.html" class="col-lg-6 tut">
+		<article>
+			<h1> Projets tutorés </h1>
+		</article>
+	</a>
+</footer>
+
+<script src="../script/jquery.js"></script>
+
+<script>
+var effet, nom, prenom, sonBut, i
+console.log()
+effet=new Audio("../BTTF.wav");
+nom=$("header p").eq(0).html();
+prenom=$("header p").eq(1).html();
+sonBut=$("button").html()
+
+$("header").hover(function() {
+	console.log("BTTF")
+	 $("header p").fadeOut(750, function() {
+	 	$("header p").eq(1).css("display","none")
+	 	$("header p").eq(0).css("width","100%").fadeIn(750).html("retour vers le portfolio")
+	 })
+}, function() {
+	$("header p").fadeOut(750, function() {
+	 	$("header p").fadeIn(750)
+	 	$("header p").eq(1).css("display","on")
+	 	$("header p").eq(0).css("width","50%").html(nom)
+	 })
+})
+
+i=0
+$("button").click(function() {
+	if(i%2 === 0) {
+		$(this).removeClass("btn-danger").addClass("btn-success").html("Sons Acceptés")
+		$("header").hover(function() {
+			if ($('.btn').hasClass('btn-success')) {
+			effet.play()
+			effet.volume=0.45
+			console.log("son écouté")}
+		}, function() {
+			effet.pause()
+			effet.currentTime=0
+			console.log("son fermé")
+		})
+		i++;
+		console.log("success")
+	}
+	else if(i%2 !== 0){
+		$(this).removeClass("btn-success").addClass("btn-danger").html(sonBut);
+		i++;
+		console.log("danger")
+	}
+})
+
+$("header").click(function() {
+	window.open("../index.html")
+	window.close()
+})
+</script>
+</body>
+</html>

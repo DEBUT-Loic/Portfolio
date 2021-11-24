@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title> Projets Tutorés </title>
+<meta charset="utf-8">
+<link rel="shortcut icon" type="image/png" href="../img/icon.png">
+<link rel="stylesheet" href="../style/bootstrap.min.css">
+<link rel="stylesheet" href="../style/tut_s.css">
+<link rel="stylesheet" href="../style/font_canal.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+</head>
+<body>
+
+<header>
+	<p> debut </p>
+	<p> loic </p>
+</header>
+
+<section>
+	<button type="button" class="btn btn-danger"> Sons Refusés </button>
+	<h1> projets tutorés </h1>
+
+	<article class="row col-12 mt-2 mb-2 justify-content-center">
+		<h2> Projet Baking Contest </h2>
+	</article>
+
+	<article class="row justify-content-center mb-3">
+		<h3 class="mb-0">
+			Nous devions créer un évènement autour d'un bâtiment célèbre ou d'un monument situé dans la péninsule rouennaise	
+		</h3>
+
+		<br>
+
+		<h3>
+			Baking Contest est un concours de pâtisserie où les desserts régionaux et mondiaux sont présents
+		</h3>
+	</article>
+
+	<article class="row img-bc">
+		<div class="col-xl-3 col-lg-6">
+			<img class="paysage" src="../img/tut/affiches_BC.png" alt="Affiches Baking Contest" id="affiches_BC"/>
+			<p>
+				Affiches
+			</p>
+		</div>
+		
+		<div class="col-xl-3 col-lg-6">
+			<img class="paysage" src="../img/tut/charte_BC.png" alt="Charte Graphique Baking Contest" id="charte_BC"/>
+			<p>
+				Charte graphique
+			</p>
+		</div>
+
+		<div class="col-xl-3 col-lg-6">
+			<img class="paysage" src="../img/tut/gallery_BC.png" alt="Galerie Baking Contest" id="gallery_BC"/>
+			<p>
+				Galerie
+			</p>
+		</div>
+
+		<div class="col-xl-3 col-lg-6">
+			<img class="paysage" src="../img/tut/site_BC.png" alt="Site Web Baking Contest" id="site_BC"/>
+			<p>
+				Site Web
+			</p>
+		</div>
+	</article>
+
+	<article class="preview-box">
+		<span class="fas fa-times"></span>
+
+		<aside>
+		</aside>
+	</article>
+
+</section>
+
+
+
+<footer>
+	<a href="audio.html" class="col-lg-6 audio">
+		<article>
+			<h1> Audiovisuel </h1>
+		</article>
+	</a>
+
+	<a href="info.html" class="col-lg-6 tut">
+		<article>
+			<h1> Infographie </h1>
+		</article>
+	</a>
+</footer>
+
+<script src="../script/jquery.js"></script>
+
+<script>
+var effet, nom, prenom, sonBut, i
+console.log()
+effet=new Audio("../BTTF.wav");
+nom=$("header p").eq(0).html();
+prenom=$("header p").eq(1).html();
+sonBut=$("button").html()
+
+$("header").hover(function() {
+	console.log("BTTF")
+	 $("header p").fadeOut(750, function() {
+	 	$("header p").eq(1).css("display","none")
+	 	$("header p").eq(0).css("width","100%").fadeIn(750).html("retour vers le portfolio")
+	 })
+}, function() {
+	$("header p").fadeOut(750, function() {
+	 	$("header p").fadeIn(750)
+	 	$("header p").eq(1).css("display","on")
+	 	$("header p").eq(0).css("width","50%").html(nom)
+	 })
+})
+
+i=0
+$("button").click(function() {
+	if(i%2 === 0) {
+		$(this).removeClass("btn-danger").addClass("btn-success").html("Sons Acceptés")
+		$("header").hover(function() {
+			if ($('.btn').hasClass('btn-success')) {
+			effet.play()
+			effet.volume=0.45
+			console.log("son écouté")}
+		}, function() {
+			effet.pause()
+			effet.currentTime=0
+			console.log("son fermé")
+		})
+		i++;
+		console.log("success")
+	}
+	else if(i%2 !== 0){
+		$(this).removeClass("btn-success").addClass("btn-danger").html(sonBut);
+		i++;
+		console.log("danger")
+	}
+})
+
+$(".img-bc img").click(function(evt) {
+	console.log("add class")
+	$(".preview-box img").remove()
+	var alt=$(".img-bc img").attr("alt");
+	$(".preview-box aside").append("<img src='../img/tut/"+evt.target.id+".png'/>");
+	$(".preview-box").addClass("show");
+})
+
+$(".preview-box span").click(function() {
+	$(".preview-box").removeClass("show");
+})
+</script>
+</body>
+</html>
