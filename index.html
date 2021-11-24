@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title> Portfolio DL </title>
+<meta charset="utf-8">
+<link rel="shortcut icon" type="image/png" href="img/icon.png">
+<link rel="stylesheet" href="style/style.css">
+<link rel="stylesheet" href="style/font_canal.css">
+<link rel="stylesheet" href="style/aos.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+</head>
+<body>
+<header>
+	<nav>
+		<ul>
+			<a href="#propos" id="lien1"><li> À propos </li></a>
+			<a href="#comp" id="lien2"><li> Compétences</li> </a>
+			<li>
+				<div id="logo">
+					<p> DEBUT </p>
+					<p> &lt;LOIC&gt; </p>
+				</div>
+			</li>
+			<a href="#projet" id="lien3"><li> Projets </li></a>
+			<a href="#contact" id="lien4"><li> Contact</li> </a>
+		</ul>
+	</nav>
+</header>
+
+<section id="propos">
+
+	<img src="img/DEBUT contour.png" alt="DEBUT Loïc"/>
+
+	<div>
+		<p class="ecrit"> </p>
+
+	</div>
+	
+	<button> Mon CV </button>
+</section>
+
+<section id="comp">
+
+	<article>
+		<i class="fas fa-images"></i>
+
+		<ul>
+			<li> Photoshop </li>
+			<li> Illustrator </li>
+			<li> InDesign </li>
+		</ul>
+	</article>
+
+	<article>
+		<i class="fas fa-code"></i>
+
+		<ul>
+			<li> HTML </li>
+			<li> CSS </li>
+			<li> JavaScript </li>
+			<li> jQuery </li>
+			<li> PHP </li>
+		</ul>
+	</article>
+
+	<article>
+		<i class="fas fa-film"></i>
+
+		<ul>
+			<li> Premiere Pro </li>
+			<li> After Effects </li>
+			<li> Perchman </li>
+		</ul>
+	</article>
+
+	<article>
+		<i class="fas fa-comments"></i>
+
+		<ul>
+			<li> Communication </li>
+			<li> Anglais B1 </li>
+			<li> Espagnol A2 </li>
+		</ul>
+	</article>
+
+</section>
+
+<section id="projet">
+	<a href="html/info.html" class="info">
+		<article >
+			<h1> Infographie </h1>
+		</article>
+	</a>
+
+	<a href="html/audio.html" class="audio">
+		<article >
+			<h1> Audiovisuel </h1>
+		</article>
+	</a>
+
+	<a href="html/tut.html" class="tut">
+		<article >
+			<h1> Projets tutorés </h1>
+		</article>
+	</a>
+</section>
+
+<section id="contact">
+		<article data-aos="zoom-in-down">
+			<button> Envoyer un mail </button>
+				<br/><br/>
+			<form id="contact-form" action="mailto:debut.loic@hotmail.com" method="post">
+
+            	  <input type="text" name="name" id="name" value="" placeholder="Nom" required>
+
+            	  <input type="text" name="mail" id="mail" value="" placeholder="E-mail" required>
+
+            	  <input type="text" name="obj" id="obj" value="" placeholder="Objet" required>
+
+            	  <textarea type="text" name="message" id="message" placeholder="Message" required></textarea>
+
+            	  <input id="send-btn" type="submit" name="" value="Envoyer">
+
+          	</form>
+		</article>
+
+		<article data-aos="zoom-in-down">
+			<a href="https://www.linkedin.com/in/lo%C3%AFc-debut-9a3199202/" target='_blank'>
+				<i class="fab fa-linkedin"></i>
+			</a>
+
+			<p> Loïc DEBUT </p>
+		</article>
+</section>
+
+<footer>
+	<p> Copyright © 2021 DEBUT LOIC. Tous droits réservés. </p>
+</footer>
+
+<script src="script/jquery.js"></script>
+<script src="script/typed.min.js"></script>
+<script src="script/aos.js"></script>
+<script src="script/btn_projet.js"></script>
+<script src="script/envoyer.js"></script>
+<!-- <script src="script/css_saison.js"></script> -->
+<script>
+AOS.init();
+var iForm;
+$("section").eq(0).css("height","100vh");
+
+$("#propos").css("padding-top",$("header").css("height"));
+
+$("#lien1").click(function() {
+	$('html, body').animate({
+                    scrollTop: $("#propos").offset().top-105
+                }, 1000);
+})
+
+$("#lien2").click(function() {
+	$('html, body').animate({
+                    scrollTop: $("#comp").offset().top-105
+                }, 1000);
+})
+
+$("#lien3").click(function() {
+	$('html, body').animate({
+                    scrollTop: $("#projet").offset().top-105
+                }, 1000);
+})
+
+$("#lien4").click(function() {
+	$('html, body').animate({
+                    scrollTop: $("#contact").offset().top-105
+                }, 1000);
+})
+	
+$(".ecrit").typed({
+    strings: ["Je m'appelle DEBUT Loïc, j'ai 19 ans et je suis actuellement en 2e année de DUT MMI (Métiers du Multimédia et de l'Internet).<br/>J'étudie les outils d'infographie (tels que la suite d'Adobe), les outils d'audiovisuel (les équipements ainsi que le montage), les langages de programmation web (HTML/CSS, JavaScript/jQuery, PHP/MySQL), les médias numériques et la communication."],
+    typeSpeed: -100,
+})
+
+$("#propos button").click(function() {
+	window.open("CV_Portfolio.pdf");
+})
+
+$("form").hide()
+
+iForm=0
+
+$("button").eq(1).click(function() {
+		$("form").slideToggle(500);
+})
+
+var pageTitle = $("title").text();
+// Changement dynamique du title
+$(window).blur(function() {
+	$("title").text("⚠️"+"VOUS AVEZ QUITTÉ"+"⚠️");
+});
+// Recup titre initial lorsque page active
+$(window).focus(function() {
+	$("title").text(pageTitle);
+});
+</script>
+</body>
+</html>
