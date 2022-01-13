@@ -72,9 +72,31 @@
 		<aside>
 		</aside>
 	</article>
+	<article class="row col-12 mt-2 mb-2 justify-content-center">
+			<h2> Date Républicaine </h2>
+		</article>
+	
+		<article class="row justify-content-center mb-3">
+			<h3 style="text-align: center;" class="mb-0">
+				J'ai eu la curiosité de créer un calendrier républicain en ligne et en direct. La date et l'heure grégoriennes sont affichées ainsi que la date et l'heure républicaine
+			</h3>
+	
+			<h3 style="text-align: center;">
+				Le calendrier républicain a été instauré en France le 24 octobre 1793 (6 Brumaire an II) puis aboli par l'empereur Napoléon Ier, le 31 décembre 1805 (11 Nivôse an XIV)
+			</h3>
 
+	</article>
+
+	<article class="row">
+		<div class="col-xl-3 col-lg-6">
+			<a href="https://debut-loic.github.io/DateRepublicaine/" target='_blank'> <img class="paysage" src="../img/tut/site_DR.png" alt="Site Web Date Républicaine"/> </a>
+			<p>
+				Site Web (cliquez sur l'image pour visiter le site)
+			</p>
+		</div>
+	</article>
 </section>
-
+	
 
 
 <footer>
@@ -92,53 +114,8 @@
 </footer>
 
 <script src="../script/jquery.js"></script>
-
+<script src="../script/retour_portfolio.js"></script>
 <script>
-var effet, nom, prenom, sonBut, i
-console.log()
-effet=new Audio("../BTTF.wav");
-nom=$("header p").eq(0).html();
-prenom=$("header p").eq(1).html();
-sonBut=$("button").html()
-
-$("header").hover(function() {
-	console.log("BTTF")
-	 $("header p").fadeOut(750, function() {
-	 	$("header p").eq(1).css("display","none")
-	 	$("header p").eq(0).css("width","100%").fadeIn(750).html("retour vers le portfolio")
-	 })
-}, function() {
-	$("header p").fadeOut(750, function() {
-	 	$("header p").fadeIn(750)
-	 	$("header p").eq(1).css("display","on")
-	 	$("header p").eq(0).css("width","50%").html(nom)
-	 })
-})
-
-i=0
-$("button").click(function() {
-	if(i%2 === 0) {
-		$(this).removeClass("btn-danger").addClass("btn-success").html("Sons Acceptés")
-		$("header").hover(function() {
-			if ($('.btn').hasClass('btn-success')) {
-			effet.play()
-			effet.volume=0.45
-			console.log("son écouté")}
-		}, function() {
-			effet.pause()
-			effet.currentTime=0
-			console.log("son fermé")
-		})
-		i++;
-		console.log("success")
-	}
-	else if(i%2 !== 0){
-		$(this).removeClass("btn-success").addClass("btn-danger").html(sonBut);
-		i++;
-		console.log("danger")
-	}
-})
-
 $(".img-bc img").click(function(evt) {
 	console.log("add class")
 	$(".preview-box img").remove()
