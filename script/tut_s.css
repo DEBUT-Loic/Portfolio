@@ -1,0 +1,220 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+:root {
+	--bleu: #03224C;
+	--jaune: #FCDDB3;
+}
+
+body {
+	background-color: var(--jaune);
+}
+
+header {
+	width: 100%;
+	display: flex;
+	text-align: center;
+}
+
+header p {
+	font-family: "canal";
+	font-size: 50px;
+	margin: 0;
+	padding: 0;
+	line-height: 50px;
+	text-transform: uppercase;
+	width: calc(100% / 2);
+}
+
+header:hover {
+	cursor: pointer;
+}
+
+header p:first-child {
+	color: #FCDDB3;
+	background-color: #03224C;
+}
+
+header p:last-child {
+	color: #03224C;
+	background-color: #FCDDB3;
+}
+
+button {
+	width: 100%;
+}
+
+section {
+	background-color: #FCDDB3;
+	width: 100%;
+	height: auto;
+}
+
+section h1 {
+	font: 4.7vw "canal gros";
+	text-transform: uppercase;
+	color: #FCDDB3;
+	background-color: #03224C;
+	text-align: center;
+}
+
+section h2 {
+	font: 3vw "canal GI";
+	text-transform: uppercase;
+	color: #03224C;
+	text-align: center;
+}
+
+section h3 {
+	font: 1.3vw "canal GI";
+	text-transform: uppercase;
+	color: #03224C;
+}
+
+section article:last-child {
+	padding-bottom: 8px;
+
+}
+
+section > article > div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+p {
+	color: var(--bleu);
+}
+
+.portrait {
+	max-width: 205px;
+	height: auto;
+}
+
+.paysage {
+	max-width: 300px;
+	height: auto;
+}
+
+img {
+	transition: all 0.5s;
+}
+
+.row {
+	margin: 0;
+}
+
+.preview-box {
+	width: 50%;
+	background-color: var(--bleu);
+	text-align: right;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform-origin: center;
+	z-index: 10000;
+	pointer-events: none;
+	opacity: 0;
+	box-shadow: 1px 1px 10px blue;
+	transform: translate(-50%, -50%) scale(0.8);
+	transition: all 0.5s;
+}
+
+.preview-box > span {
+	margin-top: 10px;
+	margin-right: 20px;
+	cursor: pointer;
+	color: var(--jaune);
+	font-size: 50px;
+}
+
+.preview-box > aside {
+	margin: 0 10px 0 10px;
+}
+
+.preview-box img {
+	width: 100%;
+}
+
+.show {
+	transform: translate(-50%, -50%) scale(1.0);
+	opacity: 1;
+	pointer-events: auto;
+	transition: all 0.5s;
+}
+
+footer {
+	width: 100%;
+	background-color: #0c1934;
+	color: #f6e2bf;
+	display: flex;
+	flex-wrap: wrap;
+	position: absolute;
+}
+
+footer > a {
+	text-align: center;
+	width: 50%;
+	height: 150px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	color: #f6e2bf;
+	transition: 0.4s color, 0.6s background;
+}
+
+footer h1 {
+	font: 3.8rem "canal gros";
+	text-transform: uppercase;
+	margin: 0;
+}
+
+footer > a:hover {
+	text-decoration: none;
+	background: rgba(252,221,131,.9);
+	color: rgba(3,50,76,1);
+	transition: 0.4s color, 0.6s background;
+}
+
+@media screen and (min-width: 792px) {
+	div > img:hover {
+		transform: scale(1.1);
+		z-index: 10000;
+		transition: all 0.8s;
+		cursor: pointer;
+	}
+}
+
+@media screen and (max-width: 1199px) {
+	.preview-box {
+		width: 75%;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.preview-box {
+		display: none;
+	}
+
+	footer {
+		bottom: auto;
+	}
+
+	footer > a {
+		height: 75px;
+	}
+
+	footer h1 {
+		font-size: 3rem;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.preview-box {
+		display: none;
+	}
+} 
