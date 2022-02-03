@@ -7,10 +7,14 @@
 /*#FCDDB3=jaune clair*/
 /*#03224C=bleu marine*/
 
+html {
+	scroll-behavior: smooth;
+}
+
 header {
 	top: 0;
 	width: 100%;
-	position: fixed;
+	position: sticky;
 	z-index: 100000000;
 }
 
@@ -70,7 +74,7 @@ header li:not(li:nth-child(3n)):hover {
 				/* SECTION*/
 
 section {
-	height: calc(100vh - 105px);
+	height: 100vh;
 }
 
 		/*PROPOS*/
