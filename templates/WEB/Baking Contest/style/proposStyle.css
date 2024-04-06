@@ -1,0 +1,185 @@
+html, body {
+	margin: 0px;
+	padding: 0px;
+	cursor: url('../img/beignet.png'), pointer;
+}
+	@font-face{
+		font-family: 'onglet';
+		src: url("../police/Montserrat-Medium.ttf") format('truetype');
+	}
+	@font-face{
+		font-family: 'text';
+		src: url("../police/Avenir.ttc") format('truetype');
+		src: url("../police/Avenir.ttf") format('truetype');
+	}
+
+a {
+	text-decoration: none;
+}
+
+header input {
+	cursor: url("../img/beignet.png"), pointer;
+	width: 150px;
+	height: 60px;
+	border-radius: 60px;
+	font-size: 20px;
+	font-family: 'text';
+	background-color: #F49F60;
+	color: white;
+	border: none;
+	transition: background 0.5s, color 0.5s;
+}
+
+#abon > form:last-child > input:last-child {
+	background: #888;
+}
+
+#abon > form:last-child > input:last-child:hover {
+	transition: background 0.5s, color 0.5s;
+	font-weight: bold;
+	background-color: white;
+	color: black;
+}
+
+header input:hover {
+	transition: background 0.5s, color 0.5s;
+	font-weight: bold;
+	background-color: white;
+	color: black;
+}
+
+header {
+	padding: 15px 0 15px 0;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+#abon {
+	display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+}
+
+.logo:hover {
+	transform: rotate(360deg);
+}
+
+.logo {
+	transition: transform 0.5s ease;
+	width : 150px;
+	height: 150px;
+}
+
+header > p {
+	text-transform: uppercase;
+	font-family: 'text';
+	font-size: 30px;
+	transform: translateY(calc(50% - 15px));
+}
+
+header form {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+ul {
+	margin: auto;
+	width: 70%;
+	text-align: center;
+	clear: both;
+	height: 50px;
+}
+
+ul a:first-child {
+	border-radius: 25px 0 0 25px;
+}
+
+ul a:last-child {
+	border-radius: 0 25px 25px 0;
+}
+
+ul a{
+	float: left;
+	line-height: 50px;
+	text-align: center;	
+	height: 50px;
+    width: 20%;
+    font-weight: bold;
+    font-family: 'onglet';
+	font-size: 20px;
+	text-decoration: none;
+	color: white;
+	background-color: #E5802E;
+	transition: background 0.5s;
+}
+
+ul a:hover {
+	transition-property: background;
+    background-color: white;
+    color: #E5802E;
+}
+
+li {
+	list-style: none;
+}
+
+ul a:nth-child(even) {
+	color: white;
+	background-color: #F49F60;
+}
+
+ul a:nth-child(even):hover {
+	color: #F49F60;
+	background-color: white;
+}
+
+#reseaux {
+	position: fixed;
+	padding-left: 5%;
+	z-index: 20;
+}
+
+#reseaux a img {
+	padding-bottom: 50%;
+	width: 50px;
+	display: block;
+}
+
+#reseaux a:last-child img {
+	padding-bottom: 0;
+}
+
+article {
+	width: 70%;
+	margin: auto;
+	text-align: justify;
+	font-family: 'text';
+}
+
+article > h1 {
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 5em;
+}
+
+article > img {
+	width: 600px;
+	float: right;
+	padding: 30px 0 50px 50px;
+}
+
+article > p {
+	text-indent: 30px;
+	margin: 0;
+}
+
+#k2000 {
+	float: left;
+	padding: 5px 50px 50px 0;
+}
+
+body > p {
+	clear: both;
+	text-align: center;
+	font-family: 'text';
+}

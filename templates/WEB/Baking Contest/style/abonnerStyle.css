@@ -1,0 +1,55 @@
+html, body {
+	margin: 0px;
+	padding: 0px;
+	cursor: url('../img/beignet.png'), pointer;
+	font-family: 'text';
+}
+	@font-face{
+		font-family: 'onglet';
+		src: url("../police/Montserrat-Medium.ttf") format('truetype');
+	}
+	@font-face{
+		font-family: 'text';
+		src: url("../police/Avenir.ttc") format('truetype');
+	}
+
+.logo {
+	width: 150px;
+	margin-left: calc(50% - 75px);
+	margin-top: 15px;
+	margin-bottom: 15px;
+	transition: transform 0.5s ease;
+}
+
+.logo:hover {
+	transform: rotate(360deg);
+}
+
+#inscrire {
+	display: flex;
+	justify-content: center;
+}
+
+p {
+	text-align: center;
+}
+
+form {
+	width: 100%;
+	text-align: center;
+}
+
+input:last-child {
+	border-style: solid;
+	background: white;
+	color: #E5802E;
+	font-family: 'text';
+	border-radius: 30px;
+	font-size: 30px;
+	border-color: #F49F60 #E5802E #E5802E #F49F60;
+	text-align: center;
+}
+
+input:last-child:active {
+	border-color: #E5802E #F49F60 #F49F60 #E5802E;
+}

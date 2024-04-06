@@ -1,0 +1,282 @@
+html, body {
+	margin: 0px;
+	padding: 0px;
+	cursor: url('../img/beignet.png'), pointer;
+}
+	@font-face{
+		font-family: 'onglet';
+		src: url("../police/Montserrat-Medium.ttf") format('truetype');
+	}
+	@font-face{
+		font-family: 'text';
+		src: url("../police/Avenir.ttc") format('truetype');
+		src: url("../police/Avenir.ttf") format('truetype');
+	}
+
+a {
+	text-decoration: none;
+}
+
+header input {
+	cursor: url("../img/beignet.png"), pointer;
+	width: 150px;
+	height: 60px;
+	border-radius: 60px;
+	font-size: 20px;
+	font-family: 'text';
+	background-color: #F49F60;
+	color: white;
+	border: none;
+	transition: background 0.5s, color 0.5s;
+}
+
+#abon {
+	display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+}
+
+#abon > form:last-child > input:last-child {
+	background: #888;
+}
+
+#abon > form:last-child > input:last-child:hover {
+	transition: background 0.5s, color 0.5s;
+	font-weight: bold;
+	background-color: white;
+	color: black;
+}
+
+header input:hover {
+	transition: background 0.5s, color 0.5s;
+	font-weight: bold;
+	background-color: white;
+	color: black;
+}
+
+header {
+	padding: 15px 0 15px 0;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.logo:hover {
+	transform: rotate(360deg);
+}
+
+.logo {
+	transition: transform 0.5s ease;
+	width : 150px;
+	height: 150px;
+}
+
+header > p {
+	text-transform: uppercase;
+	font-family: 'text';
+	font-size: 30px;
+	transform: translateY(calc(50% - 15px));
+}
+
+header form {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+nav > ul {
+	margin: auto;
+	width: 70%;
+	text-align: center;
+	clear: both;
+	height: 50px;
+}
+
+ul a:first-child {
+	border-radius: 25px 0 0 25px;
+}
+
+ul a:last-child {
+	border-radius: 0 25px 25px 0;
+}
+
+ul a{
+	float: left;
+	line-height: 50px;
+	text-align: center;	
+	height: 50px;
+    width: 20%;
+    font-weight: bold;
+    font-family: 'onglet';
+	font-size: 20px;
+	text-decoration: none;
+	color: white;
+	background-color: #E5802E;
+	transition: background 0.5s;
+}
+
+ul a:hover {
+	transition-property: background;
+    background-color: white;
+    color: #E5802E;
+}
+
+li {
+	list-style: none;
+}
+
+ul a:nth-child(even) {
+	color: white;
+	background-color: #F49F60;
+}
+
+ul a:nth-child(even):hover {
+	color: #F49F60;
+	background-color: white;
+}
+
+h1 {
+	margin-top: 25px;
+	text-align: center;
+	font-family: 'text';
+}
+
+#decompte {
+	margin-top: 20px;
+	width: 100%;
+	text-align: center;
+	clear: both;
+	display: inline-flex;
+	justify-content: center;
+}
+
+#time {
+	text-align: center;
+	font-size: 3em;
+	font-family:dejavu,monospace, Verdana,sans-serif;
+	}
+
+small {
+	font-size: 0.45em;
+	font-family: 'text';
+	}
+
+#time, small {
+	width: 15%;
+}
+
+h3 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+section {
+	clear: both;
+	text-align: center;
+}
+
+section > img {
+	padding-top: 20px;
+	width: 859px;
+}
+
+#reseaux {
+	position: fixed;
+	padding-left: 5%;
+}
+
+#reseaux a img {
+	padding-bottom: 50%;
+	width: 50px;
+	display: block;
+}
+
+#reseaux a:last-child img {
+	padding-bottom: 0;
+}
+
+#info {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+	align-items: center;
+}
+
+#addate {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 245px;
+}
+
+#addate h2 {
+	font-family: 'text';
+}
+
+input {
+	border: none;
+}
+
+input {
+	border-style: solid;
+	background: white;
+	color: #E5802E;
+	font-family: 'text';
+	border-radius: 30px;
+	font-size: 30px;
+	border-color: #F49F60 #E5802E #E5802E #F49F60;
+	text-align: center;
+}
+
+input:active {
+	border-color: #E5802E #F49F60 #F49F60 #E5802E;
+}
+
+#organise,#inscrip {
+	width: 20%;
+	margin: auto;
+	text-align: left;
+	font-size: 30px;
+	font-family: 'text';
+}
+
+#inscrip {
+	width: 60%;
+}
+
+#organise p, #inscrip p{
+	text-align: center;
+}
+
+#inscrip p + p {
+	font-weight: bold;
+	color: #E5802E;
+}
+
+#inscrip li {
+	padding-left: 30px;
+	font-weight: bold;
+	color: #E5802E;
+}
+
+#organise li, #inscrip li {
+	font-size: 25px;
+}
+
+#organise h2, #inscrip h2 {
+	margin-bottom: 0;
+	text-align: center;
+}
+
+#planning {
+	width: 50%;
+	margin: auto;
+	text-align: justify;
+	font-family: 'text';
+	font-size: 20px;
+}
+
+body > p {
+	text-align: center;
+	cursor: auto;
+	font-family: 'text';
+}

@@ -1,0 +1,193 @@
+html, body {
+	margin: 0px;
+	padding: 0px;
+	cursor: url('../img/beignet.png'), pointer;
+}
+
+body {
+	position: relative;
+	  min-height: 100%;
+}
+
+	@font-face{
+		font-family: 'onglet';
+		src: url("../police/Montserrat-Medium.ttf") format('truetype');
+	}
+	@font-face{
+		font-family: 'text';
+		src: url("../police/Avenir.ttc") format('truetype');
+		src: url("../police/Avenir.ttf") format('truetype');
+	}
+
+a {
+	text-decoration: none;
+}
+
+header input {
+	cursor: url("../img/beignet.png"), pointer;
+	width: 150px;
+	height: 60px;
+	border-radius: 60px;
+	font-size: 20px;
+	font-family: 'text';
+	background-color: #F49F60;
+	color: white;
+	border: none;
+	transition: background 0.5s, color 0.5s;
+}
+
+#abon > form:last-child > input:last-child {
+	background: #888;
+}
+
+#abon > form:last-child > input:last-child:hover {
+	transition: background 0.5s, color 0.5s;
+	font-weight: bold;
+	background-color: white;
+	color: black;
+}
+
+header input:hover {
+	transition: background 0.5s, color 0.5s;
+	font-weight: bold;
+	background-color: white;
+	color: black;
+}
+
+header {
+	padding: 15px 0 15px 0;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.logo:hover {
+	transform: rotate(360deg);
+}
+
+.logo {
+	transition: transform 0.5s ease;
+	width : 150px;
+	height: 150px;
+}
+
+header > div {
+	display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+}
+
+#titre {
+	text-transform: uppercase;
+	font-family: 'text';
+	font-size: 30px;
+	width: 150px;
+	text-align: center;
+}
+
+header form {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+ul {
+	margin: auto;
+	width: 70%;
+	text-align: center;
+	clear: both;
+	height: 50px;
+}
+
+ul a:first-child {
+	border-radius: 25px 0 0 25px;
+}
+
+ul a:last-child {
+	border-radius: 0 25px 25px 0;
+}
+
+ul a{
+	float: left;
+	line-height: 50px;
+	text-align: center;	
+	height: 50px;
+    width: 20%;
+    font-weight: bold;
+    font-family: 'onglet';
+	font-size: 20px;
+	text-decoration: none;
+	color: white;
+	background-color: #E5802E;
+	transition: background 0.5s;
+}
+
+ul a:hover {
+	transition-property: background;
+    background-color: white;
+    color: #E5802E;
+}
+
+li {
+	list-style: none;
+}
+
+section {
+	padding-top: 15px;
+	clear: both;
+	font-family: 'text';
+	text-align: center;
+}
+
+ul a:nth-child(even) {
+	color: white;
+	background-color: #F49F60;
+}
+
+ul a:nth-child(even):hover {
+	color: #F49F60;
+	background-color: white;
+}
+
+section > img {
+	width: 60%;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+section div {
+	margin: auto;
+	margin-bottom: 20px;
+	border-radius: 50px;
+	width: 70%;
+	color: black;
+	background-color: rgba(229, 128, 46, 0.5);
+}
+
+section div:hover {
+	transition: background 0.25s linear, color 0.25s linear;
+	background-color: white;
+	color: black;
+}
+
+div > h1,p {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+section a:visited {
+	color: black;
+}
+
+#reseaux {
+	position: fixed;
+	padding-left: 5%;
+}
+
+#reseaux > a:last-child > img {
+	padding-bottom: 0;
+}
+
+#reseaux > a > img {
+	padding-bottom: 50%;
+	width: 50px;
+	display: block;
+}
