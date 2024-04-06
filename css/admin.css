@@ -1,0 +1,146 @@
+@keyframes backgroundMenu {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#panel {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--jaune);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#success, #erreur {
+    padding: 10px;
+    width: 80%;
+    border: 1px solid;
+    text-align: center;
+    font-family: "DIN_Bold";
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+#success {
+    color: green;
+	border-color: green;
+	background: #e7ffde;
+}
+#erreur {
+    color: red;
+	border-color: red;
+	background: #ffdede;
+}
+
+
+article {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    width: 50%;
+    font-family: "Agency_Gras";
+	font-size: clamp(.75rem,3vw,2rem);
+	color: var(--vert);
+	background: black;
+	border: 3px solid var(--vert);
+	border-radius: 0 20% 20% 0;
+	padding: 10px 20px;
+	transition: transform 0.5s;
+}
+article > button:hover {
+    transform: scale(1.1);
+}
+button.focus {
+    color: black;
+	background: var(--vert);
+	border-radius: 20% 0 0 20% ;
+}
+
+#panel form {
+    display: none;
+    flex-direction: column;
+}
+
+label {
+    font-family: "DIN_Bold";
+}
+
+input:not(input[type="file"]) {
+    font-family: "DIN_Normal";
+	border-radius: 0 20% 20% 0;
+    border: 1px black solid;
+}
+
+input[type="submit"] {
+    color: var(--jaune);
+    background: black;
+    font-size: 1.25rem;
+    padding: 10px;
+    border: 2px solid;
+    border-color: var(--jaune);
+    transition: background 0.5s, color 0.5s, border-color 0.5s;
+}
+input[type="submit"]:hover {
+    background: var(--jaune);
+    color: black;
+    border-color: black;
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.menu button {
+    font-size: clamp(.5rem,2vw,1.25rem);
+    color: var(--jaune);
+    border-color: var(--jaune);
+    width: auto;
+    cursor: pointer;
+    transition: background 0.5s, color 0.5s, border 0.5s;
+}
+.menu:hover button {
+    color: black;
+    background: var(--jaune);
+    border-color: black;
+}
+
+/* Formulaire ID */
+#formBody {
+    background-color: var(--jaune);
+}
+
+#formID {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#formID div {
+    margin-bottom: 20px;
+}
+#formID input:not([type="submit"]) {
+    padding-left: 5px;
+}

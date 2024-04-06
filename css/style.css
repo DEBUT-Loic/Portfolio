@@ -1,0 +1,166 @@
+:root {
+	--jaune: #e5de28;
+	--bleu: #0ebfff;
+	--vert: #68eb22;
+	--orange: #ffb50e;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar { /* Toute la scrollbar */
+	background: #ccc;
+}
+
+::-webkit-scrollbar-button:single-button {
+	background-color: black;
+	display: block;
+	border-style: solid;
+	height: 16px;
+	width: 16px;
+}
+::-webkit-scrollbar-button:single-button:vertical:increment {
+	border-width: 8px 8px 0 8px;
+    border-color: var(--jaune) transparent transparent transparent;
+}
+::-webkit-scrollbar-button:single-button:vertical:increment:hover {
+	background: #777;
+}
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+	border-width: 0 8px 8px 8px;
+    border-color: transparent transparent var(--jaune) transparent;
+}
+::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+	background: #777;
+}
+
+
+::-webkit-scrollbar-thumb { /* La barre */
+	background: #9e981a;
+}
+
+::-webkit-scrollbar-thumb:hover { /* La barre survolé */
+	background: #9a9512;
+}
+
+::-webkit-scrollbar-thumb:active { /* La barre cliqué */
+	background: #000;
+}
+
+/* CSS */
+
+/* Body */
+
+#body-content {
+	height: 100vh;
+	width: 100%;
+/*	background: url("../img/Fond_Menu.png") center;*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	position: relative;
+}
+
+#body-content::before {
+	content: "";
+	position: absolute;
+	width: 250%;
+	height: 250%;
+	top: -75%;
+	left: -75%;
+	z-index: -1;
+	background: url("../img/Fond_Menu_Cercle.png") no-repeat center;
+	background-size: 75%;
+	background-color: var(--jaune);
+	animation: backgroundMenu 30s linear infinite;
+}
+
+#body-content > article {
+	background: rgba(0, 0, 0, 0.5);
+	width: 50%;
+	height: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+
+#body-content h1 {
+	font-size: clamp(4rem,7vw,5rem);
+	font-family: "Agency_Black";
+	color: var(--jaune);
+	text-shadow: 8px 8px 1px black;
+}
+
+#body-content p {
+	font-family: "DIN_Normal";
+	font-size: clamp(.75rem,3vw,1.5rem);
+	color: white;
+	text-align: center;
+}
+
+#button {
+	width: 75%;
+	display: flex;
+	justify-content: space-around;
+}
+#button button {
+	background: black;
+	color: var(--jaune);
+	font-family: "Agency_Black";
+	font-size: clamp(.75rem,3vw,2rem);
+	padding: 10px 20px;
+}
+
+#button a:first-child button {
+	color: var(--vert);
+	border: 3px solid  var(--vert);
+	border-radius: 0 20% 20% 0;
+	transition: color .5s, background .5s, border-radius .5s;
+}
+
+#button a:last-child button {
+	color: var(--orange);
+	border: 3px solid var(--orange);
+	border-radius: 0 20% 20% 0;
+	transition: color .5s, background .5s, border-radius .5s;
+}
+
+#button a:first-child button:hover {
+	background: var(--vert);
+	color: black;
+	border-radius: 20% 0 0 20%;
+}
+
+#button a:last-child button:hover {
+	background: var(--orange);
+	color: black;
+	border-radius: 20% 0 0 20%;
+}
+@media all and (max-width: 1322px) {
+	#body-content > article {
+		width: 85%;
+	}
+}
+@media all and (max-width: 804px) {
+	#body-content::before {
+		content: none;
+	}
+
+	#body-content {
+		background: url("../img/Fond_Menu_Cercle.png") no-repeat center;
+	}
+}
+@media all and (max-width: 768px) {
+	#body-content {
+		background: none;
+		height: calc(100vh - 100px);
+	}
+	#body-content::before {
+		content: "";
+		width: 300%;
+		height: 300%;
+		top:-100%;
+		left:-100%;
+	}
+}

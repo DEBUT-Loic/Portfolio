@@ -1,0 +1,205 @@
+/* SCROLLBAR */
+
+::-webkit-scrollbar { /* Toute la scrollbar */
+	background: #ccc;
+}
+
+::-webkit-scrollbar-button:single-button {
+	background-color: black;
+	display: block;
+	border-style: solid;
+	height: 16px;
+	width: 16px;
+}
+::-webkit-scrollbar-button:single-button:vertical:increment {
+	border-width: 8px 8px 0 8px;
+    border-color: var(--bleu) transparent transparent transparent;
+}
+::-webkit-scrollbar-button:single-button:vertical:increment:hover {
+	background: #777;
+}
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+	border-width: 0 8px 8px 8px;
+    border-color: transparent transparent var(--bleu) transparent;
+}
+::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+	background: #777;
+}
+
+
+::-webkit-scrollbar-thumb { /* La barre */
+	background: #1782b0;
+}
+
+::-webkit-scrollbar-thumb:hover { /* La barre survolé */
+	background: #00658a;
+}
+
+::-webkit-scrollbar-thumb:active { /* La barre cliqué */
+	background: #000;
+}
+
+/* CSS */
+
+h2 {
+	font-family: "Agency_Black";
+	font-size: 2.5rem;
+}
+
+p {
+	word-break: break-word;
+}
+
+hr {
+	background: black;
+	width: 90%;
+	height: 5px;
+	margin: 0 auto;
+	border: none;
+}
+
+#body-content {
+	width: 100%;
+}
+
+body {
+	position: relative;
+	overflow: hidden;
+}
+#body-content::before {
+	content: "";
+	position: absolute;
+	width: 250%;
+	height: 250%;
+	top: -70%;
+	left: -70%;
+	z-index: -1;
+	overflow: hidden;
+	background: url("../img/Fond_Propos_Cercle.png") no-repeat center;
+	background-size: 100%;
+	background-color: var(--bleu);
+	animation: backgroundMenu 30s linear infinite;
+}
+
+#titreArticle {
+	background: black;
+	color: var(--bleu);
+	font-family: "Agency_Black";
+	font-size: 3rem;
+	text-align: center;
+	padding: 5px 0;
+}
+
+#body-content button {
+	font-family: "Agency_Gras";
+	font-size: clamp(.75rem,3vw,2rem);
+	color: var(--vert);
+	background: black;
+	border: 3px solid var(--vert);
+	border-radius: 0 20% 20% 0;
+	padding: 10px 20px;
+	transition: color .25s, background .25s, border-radius .25s;
+}
+
+#body-content a:hover button {
+	color: black;
+	background: var(--vert);
+	border-radius: 20% 0 0 20%;
+}
+
+
+/* Présentation */
+
+#cv {
+	display: block;
+	margin: 0 auto 20px auto;
+}
+
+a.lienCV {
+	text-align: center;
+}
+
+#body-content a.lienCV button {
+	color: var(--bleu);
+	border: 3px solid var(--bleu);
+}
+
+#body-content a.lienCV:hover button {
+	color: black;
+	background: var(--bleu);
+	border: 3px solid black;
+}
+
+article:not(article:first-of-type) {
+	margin: 20px 0;
+}
+
+#chap1 {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+#presentation {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	font-size: clamp(8px,2vw,1.25rem);
+	margin: 0 10px;
+}
+
+#titre {
+	width: 100%;
+	text-align: center;
+}
+
+#paragraphe {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: 0 10px;
+}
+
+#presentation > p {
+	font-family: "DIN_Bold";
+}
+#presentation > img {
+	width: 100px;
+}
+
+#presentation li {
+	font-family: "DIN_Normal";
+}
+
+#profil {
+	padding: clamp(5px,5vw,20px);
+	background: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0 20% 20% 0;
+	max-height: 307px;
+}
+
+#profil > img {
+	width: clamp(50px,10vw,200px);
+}
+
+/* Boutons Galerie */
+
+#btnGalerie {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+@media all and (max-width: 768px) {
+	#body-content {
+		min-height: calc(100vh - 100px);
+	}
+
+	#presentation {
+		width: 50%;
+	}
+}

@@ -1,0 +1,15 @@
+#sLoad {
+	animation: startLoad .001s forwards 2.5s;
+}
+#startA {
+	animation: startJ .5s forwards .5s;
+}
+#startB {
+	animation: startB .5s forwards 1s;
+}
+#startC {
+	animation: startV .5s forwards 2s;
+}
+#startD {
+	animation: startO .5s forwards 1.5s;
+}

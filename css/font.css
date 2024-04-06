@@ -1,0 +1,20 @@
+@font-face {
+	font-family: "Agency_Black";
+	src: url("fonts/Agency-Black.otf");
+}
+@font-face {
+	font-family: "Agency_Gras";
+	src: url("fonts/Agency-Gras.ttf");
+}
+@font-face {
+	font-family: "Agency_Normal";
+	src: url("fonts/Agency-Normal.ttf");
+}
+@font-face {
+	font-family: "DIN_Bold";
+	src: url("fonts/DIN Alternate Bold.otf");
+}
+@font-face {
+	font-family: "DIN_Normal";
+	src: url("fonts/DIN Alternate Regular.otf");
+}

@@ -1,0 +1,208 @@
+/* SCROLLBAR */
+
+::-webkit-scrollbar { /* Toute la scrollbar */
+	background: #ccc;
+}
+
+::-webkit-scrollbar-button:single-button {
+	background-color: black;
+	display: block;
+	border-style: solid;
+	height: 16px;
+	width: 16px;
+}
+::-webkit-scrollbar-button:single-button:vertical:increment {
+	border-width: 8px 8px 0 8px;
+    border-color: var(--vert) transparent transparent transparent;
+}
+::-webkit-scrollbar-button:single-button:vertical:increment:hover {
+	background: #777;
+}
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+	border-width: 0 8px 8px 8px;
+    border-color: transparent transparent var(--vert) transparent;
+}
+::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+	background: #777;
+}
+
+
+::-webkit-scrollbar-thumb { /* La barre */
+	background: #45a117;
+}
+
+::-webkit-scrollbar-thumb:hover { /* La barre survolé */
+	background: #409e0e;
+}
+
+::-webkit-scrollbar-thumb:active { /* La barre cliqué */
+	background: #000;
+}
+
+/* CSS */
+
+#body-content {
+	width: 100%;
+	min-height: 100vh;
+}
+
+body {
+	position: relative;
+	overflow: hidden;
+}
+#body-content::before {
+	content: "";
+	position: absolute;
+	width: 250%;
+	height: 250%;
+	top: -70%;
+	left: -70%;
+	transform: translate(75%,75%);
+	z-index: -1;
+	overflow: hidden;
+	background: url("../img/Fond_Galerie_Cercle.png") no-repeat center;
+	background-size: 100%;
+	background-color: var(--vert);
+	animation: backgroundMenu 30s linear infinite;
+}
+
+#titreArticle {
+	background: black;
+	color: var(--vert);
+	font-family: Agency_Black;
+	font-size: 3rem;
+	text-align: center;
+	padding: 5px 0;
+	margin-bottom: 10px;
+}
+
+#diapo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+/* Galerie d'images */
+
+.info {
+	background-position: center;
+	background-size: cover;
+	margin: 0 0 3% 3%;
+}
+
+.port {
+	width: clamp(200px,15vw,288px);
+	height: clamp(180px,45vh,392px);
+}
+
+.land {
+	width: clamp(173px,25vw,480px);
+	height: clamp(126px,13vw,250px);
+}
+
+.zoom {
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(51, 126, 11, 0.9);
+	transition: opacity 0.2s;
+}
+
+.info:hover .zoom {
+	cursor: pointer;
+	opacity: 1;
+}
+
+i {
+	color: white;
+}
+
+.nothing {
+	font-family: DIN_Normal;
+	margin: 0 auto;
+}
+
+/* Image individuel */
+
+#imgMore {
+	display: none;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.8);
+	z-index: 10;
+}
+
+.fa-sharp {
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 1% 1% 0 0;
+	font-size: 1.5rem;
+	cursor: pointer;
+	transition: transform 0.5s;
+}
+
+.fa-sharp:hover {
+	transform: scale(2);
+}
+
+#imgMore article {
+	width: 100%;
+	height: 100%;
+	padding: 1% 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#imgMore #imageDesc {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+#imgMore h1 {
+	color: white;
+	font-family: Agency_Gras;
+	font-size: 2rem;
+}
+
+#imgMore img {
+	width: 30%;
+}
+
+#imgMore p {
+	color: white;
+	width: 30%;
+	font-family: DIN_Normal;
+}
+
+#imgMore a {
+	color: var(--vert);
+	text-decoration: underline;
+}
+
+#imgMore a:hover {
+	text-decoration: none;
+}
+
+@media all and (max-width: 768px) {
+	#imageDesc {
+		flex-direction: column;
+	}
+
+	#imgMore #imageDesc > * {
+		width: 95%;
+	}
+}

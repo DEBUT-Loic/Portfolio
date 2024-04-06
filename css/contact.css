@@ -1,0 +1,248 @@
+/* SCROLLBAR */
+
+::-webkit-scrollbar { /* Toute la scrollbar */
+	background: #ccc;
+}
+
+::-webkit-scrollbar-button:single-button {
+	background-color: black;
+	display: block;
+	border-style: solid;
+	height: 16px;
+	width: 16px;
+}
+::-webkit-scrollbar-button:single-button:vertical:increment {
+	border-width: 8px 8px 0 8px;
+    border-color: var(--orange) transparent transparent transparent;
+}
+::-webkit-scrollbar-button:single-button:vertical:increment:hover {
+	background: #777;
+}
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+	border-width: 0 8px 8px 8px;
+    border-color: transparent transparent var(--orange) transparent;
+}
+::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+	background: #777;
+}
+
+
+::-webkit-scrollbar-thumb { /* La barre */
+	background: #b07a0d;
+}
+
+::-webkit-scrollbar-thumb:hover { /* La barre survolé */
+	background: #ac7700;
+}
+
+::-webkit-scrollbar-thumb:active { /* La barre cliqué */
+	background: #000;
+}
+
+/* CSS */
+
+#body-content {
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	overflow: hidden;
+}
+
+#body-content::before {
+	content: "";
+	position: absolute;
+	width: 250%;
+	height: 250%;
+	top: -75%;
+	left: -75%;
+	z-index: -1;
+	background: url("../img/Fond_Contact_Cercle.png") no-repeat center;
+	background-size: 75%;
+	background-color: var(--orange);
+	animation: backgroundMenu 30s linear infinite;
+}
+
+/* Article */
+
+#body-content > article {
+	background: rgba(0, 0, 0, 0.5);
+	width: 95%;
+	min-height: 70%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	padding: 3vh 0;
+}
+
+#body-content h1 {
+	font-size: clamp(4rem,7vw,5rem);
+	font-family: "Agency_Black";
+	color: var(--orange);
+	text-shadow: 8px 8px 1px black;
+}
+
+hr {
+	max-height: 100%;
+	border: 2px solid var(--orange);
+}
+
+/* CONTACT ARTICLE */
+
+#contactArticle {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+/*	padding: 0 20px;*/
+}
+
+#contactArticle > div {
+	height: 500px;
+}
+
+#contactForm {
+	width: 350px;
+	display: flex;
+}
+
+#contactArticle form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	font-size: 1.25rem;
+}
+
+#contactArticle form > div {
+	display: flex;
+	flex-direction: column;
+}
+
+#contactArticle form label {
+	font-family: Agency_Gras;
+}
+
+#contactArticle form input {
+	padding: 5px 2px;
+}
+
+#contactArticle form input, #contactArticle form textarea {
+	background: #ffca51;
+	color: black;
+	border: none;
+	font-family: DIN_Bold;
+}
+
+#contactArticle form input:focus-within, #contactArticle form textarea:focus-within {
+	outline: 3px ridge black;
+	border-radius: 2px;
+}
+
+#contactArticle .btnEnvoyer {
+	cursor: pointer;
+	transition: background .2s, color .2s;
+}
+
+#contactArticle .btnEnvoyer:hover {
+	background: black;
+	color: var(--orange);
+}
+
+#contactMenu {
+	max-width: 600px;
+}
+
+#contactMenu > a {
+	display: flex;
+	align-items: center;
+	height: calc(100% / 3);
+	transition: background .5s;
+}
+
+#contactMenu div {
+	padding: 0 10px;
+	font-family: Agency_Gras;
+	font-size: 2rem;
+	color: var(--orange);
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	transition: color .5s;
+}
+
+#contactMenu a .cls-1 {
+	transition: fill 0.5s;
+}
+
+#contactMenu a:hover {
+	background: var(--orange);
+}
+
+#contactMenu a:hover div {
+	color: black;
+}
+
+#contactMenu a:hover .cls-1 {
+	transition: fill 0.5s;
+	fill: black;
+}
+
+#contactMenu svg {
+	width: 60px;
+	margin-right: clamp(1px,1vw,100px);
+}
+
+@media all and (max-width: 927px) {
+	#contactArticle {
+		flex-direction: column;
+		justify-content: space-evenly;
+	}
+
+	hr {
+		margin: 20px 0;
+	}
+
+	#contactArticle > div {
+		height: auto;
+		max-width: 100%;
+	}
+
+	#contactForm {
+		margin: 0 auto;
+	}
+
+	#contactMenu a {
+		height: 111px;
+	}
+}
+
+@media all and (max-width: 768px) {
+	#body-content {
+		background: none;
+		min-height: calc(100vh - 100px);
+	}
+	#body-content::before {
+		content: "";
+		width: 300%;
+		height: 300%;
+		top:-100%;
+		left:-100%;
+	}
+
+	h1 {
+		margin-bottom: 20px;
+	}
+
+	#contactForm, hr {
+		display: none;
+	}
+
+	#contactMenu svg {
+		margin: 0 18px;
+	}
+}
