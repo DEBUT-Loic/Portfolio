@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="drapeau_icon.png">
+    <link  rel="stylesheet" href="style.css" media="all and (orientation: landscape)">
+    <link rel="stylesheet" href="style.css" media="all and (orientation: portrait)">
+    <title> Calendrier </title>
+</head>
+<body>
+<section id="direct">
+    <article>
+        <div id="gregorien">
+            <h1></h1>
+            <small></small>
+            <p class="dateW"></p>
+            <p class="hW"></p>
+        </div>
+        <div id="republic">
+            <p class="jourR"></p>
+            <p class="dateR"></p>
+            <p class="hR"></p>
+        </div>
+    </article>
+</section>
+<section id="sect_conv">
+   <a href="#conversion"> <button id="button_conv"> Conversion </button> </a>
+</section>
+<section id="conversion">
+    <article>
+        <div id="gregorien">
+            <h1> CONVERSION RÉPUBLICAINE <span></span></h1>
+
+            <input type="datetime-local" id="input_date">
+
+        </div>
+        <div id="republic">
+            <p class="jourC"></p>
+            <p class="dateC"></p>
+            <p class="hC"></p>
+        </div>
+    </article>
+</section>
+<section id="sect_direct">
+   <a href="#direct"> <button id="button_direct"> Calendrier </button> </a>
+</section>
+<footer>
+    <p> Copyright © 2022&nbsp; </p> 
+    <div>
+        <p> DEBUT&nbsp; </p>
+        <p> LOIC </p>
+    </div>
+    <p> &nbsp;Tous droits réservés. </p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="calendrier-republicain/index.js"></script>
+<script src="script/conversion.js"></script>
+<script src="script/calendrier.js"></script>
+</body>
+</html>
